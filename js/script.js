@@ -11,7 +11,9 @@ const itemAmountUser = Number(prompt('Введите количество тов
 const itemCategoryUser = prompt('Введите категорию товара: ', 'Несортированный');
 const itemPriceUser = Number(prompt('Введите стоимость товара: ', 0));
 
-console.log('Тип данных количество: ' + typeof(itemAmountUser) +
-' Тип данных стоимость: ' + typeof(itemPriceUser));
-console.log(`Ваш товар: "${itemNameUser}" добавлен в категорию "${itemCategoryUser}"
-в количестве ${itemAmountUser} шт. по цене ${itemPriceUser} рублей.`);
+if (isNaN(itemPriceUser) || isNaN(itemAmountUser)) {
+  alert('Вы ввели некорректные данные');
+} else {
+  console.log(`Ваш товар: "${itemNameUser}" добавлен в категорию "${itemCategoryUser}"
+  в количестве ${itemAmountUser} шт. по цене ${itemPriceUser} рублей.`);
+}
